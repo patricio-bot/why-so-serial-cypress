@@ -1,0 +1,64 @@
+<header class="header"></header>
+
+
+<div class="wrapper-killers">
+    <div class="main-killers">
+        <blockquote class="killer-quote">
+            <p>A clown can get away with murder
+            </p>
+            <span>John Wayme Gacy</span>
+        </blockquote>
+        <div class="killers-title">
+            <h1>Killers</h1>
+        </div>
+
+        <div class="killers-container">
+
+
+            {{#if killers}}
+
+            {{#each killers}}
+
+            <div class="flip-card">
+
+                <div class="flip-card-side flip-card-front">
+                    <div class="flip-card-img-container">
+                        <div class="fake-shadow"></div>
+                        <img src="{{this.image}}" alt="">
+                    </div>
+
+                    <a href="/killers/{{this._id}}">
+                        <p class="killer-card-name">{{this.name}} {{this.lastName}}</p>
+                    </a>
+                </div>
+                <div class="flip-card-side flip-card-back">
+                    <div class="flip-card-back-details">
+                        <h3>{{this.name}} {{this.lastName}}</h3>
+                        <p>A.K.A: {{this.aka}}</p>
+
+                        <p>Zodiac Sign: {{this.zodiacSign}}</p>
+
+
+                        <a class="read-more" href="/killers/{{this._id}}">
+                            <p>Read More</p>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            {{/each}}
+        </div>
+        <p class="not-session-user">If you haven't found the killer you're looking for you can create one <a
+                href="/private/add-killer">here</a>!
+        </p>
+        <div class="back-link"><a href="/"><button class="btn btn-after"> Back</button></a></div>
+        {{else}}
+        <p class="not-session-user">Sorry, there are no killers that fit into this parameters. <a
+                href="/private/add-killer">But you can create
+                one
+                here!</a></p>
+        {{/if}}
+    </div>
+</div>
+{{> footerpartial this}}
