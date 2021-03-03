@@ -2,29 +2,31 @@
     <div class="form-bg">
         <div class="form-container">
             <div class="form-title">
-                <h2>Log In</h2>
+                <h2 data-cy="login-title">Log In</h2>
                 {{#if errorMessage}}
                 <p class="error-message">
                     {{ errorMessage }}
                 </p>
                 {{/if}}
             </div>
-            <form class="form" action="/login" method="post">
+            <form data-cy="login-form" class="form" action="/login" method="post">
                 <div class="form-group">
-                    <input class="form-input" type="email" name="email" id="email-input" placeholder="Email">
+                    <input data-cy="test-email" class="form-input" type="email" name="email" id="email-input"
+                        placeholder="Email">
                     <label class="form-label" for="email-input">Email</label>
                 </div>
                 <div class="form-group">
-                    <input class="form-input" type="password" name="password" id="password-input" placeholder="*******">
+                    <input data-cy="password" class="form-input" type="password" name="password" id="password-input"
+                        placeholder="*******">
                     <label class="form-label" for="password-input">Password</label>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-after">Log In</button>
+                    <button data-cy="submit-login" class="btn btn-after">Log In</button>
                 </div>
             </form>
             <p>
                 Don't have an account?
-                <a href="/signup">
+                <a data-cy="signup-link" href="/signup">
                     Create an account.
                 </a>
             </p>
